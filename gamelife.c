@@ -43,8 +43,8 @@ int main(int ac, char **av)
 
     game.wd_size.x = 1080;
     game.wd_size.y = 720;
-    game.map_size.x = 50;
-    game.map_size.y = 50;
+    game.map_size.x = 30;
+    game.map_size.y = 30;
     if (ac == 3 && my_str_isnum(av[1]) == 1 && my_str_isnum(av[2]) == 1) {
         game.map_size.x = my_getnbr(av[1]);
         game.map_size.y = my_getnbr(av[2]);

@@ -96,8 +96,7 @@ void my_scroll_dez(game_t *game)
     while (game->map[x] != NULL)
         x++;
     x = x + x;
-    new_map = malloc(sizeof(char *) * (x + 1));
-    if (new_map == NULL)
+    if (!(new_map = malloc(sizeof(char *) * (x + 1))))
         exit (84);
     while (i != x) {
         new_map[i] = malloc(sizeof(char) * y);

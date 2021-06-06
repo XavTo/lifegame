@@ -23,7 +23,7 @@ CINCLUDE = -I ./include
 
 CGRAPHICS = -lcsfml-graphics -lcsfml-audio -lcsfml-system -lcsfml-window
 
-CFLAGS	= -L lib/ -lmy $(CINCLUDE) $(CEXTRA)
+CFLAGS	= -g -L lib/ -lmy $(CINCLUDE) $(CEXTRA)
 
 NAME = gamelife
 

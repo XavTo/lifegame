@@ -57,8 +57,9 @@ static char **copy_black_cell(game_t *game, char **new_map)
 
     while (game->map[x] != NULL) {
         while (game->map[x][y] != '\0') {
-            if (game->map[x][y] == BLACK && new_map[sx] != NULL)
-                new_map[sx][sy] = BLACK;
+            if (game->map[x][y] == BLACK)
+                if (sx < game->map_size.x / 2 && sy < game->map_size.x / 2)
+                    new_map[sx][sy] = BLACK;
             y++;
             sy++;
         }
@@ -99,8 +100,7 @@ void my_scroll_zom(game_t *game)
     while (game->map[x] != NULL)
         x++;
     x = x / 2;
-    new_map = malloc(sizeof(char *) * (x + 1));
-    if (new_map == NULL)
+    if (!(new_map = malloc(sizeof(char *) * (x + 1))))
         exit (84);
     while (i != x) {
         new_map[i] = malloc(sizeof(char) * y);
